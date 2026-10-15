@@ -1,0 +1,27 @@
+Projeto-Vandana
+Público- Oficinas, motoboys e motociclitas
+Objetivo- Site institucional
+Ação principal- Apresentação da loja
+
+Tipo:
+[]Página única
+[x]Múltiplas páginas 
+
+Páginas ou seções:
+1.Início
+2.Sobre Nós 
+3.Contato
+4.Marcas Parceiras
+5.Solicite um Orçamento
+(formulário)
+
+Menu Principal.
+1.imagem da fachada
+2.Apresentação da empresa 
+3.E orçamento
+
+Conteúdo Essencial- apresentação, contatos
+
+Conteúdo complementar- Solicitação de orçamento
+
+Chamada para ação principal-
