@@ -88,7 +88,7 @@ nav {
     padding: 2.5rem;
 
     background:
-        linear-gradient(90deg, transparent, rgba(0,0,0,0.75)),
+        linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.75)),
         url("imagens/fachada.jpg") center/cover;
 
     div {
@@ -131,47 +131,6 @@ nav {
         border: 2px solid var(--vermelho);
     }
 }
-
-/* CONTATO */
-#contato {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    background: var(--fundo-card);
-
-    ul {
-        list-style: none;
-    }
-
-    li {
-        margin-bottom: 0.7rem;
-
-        &:nth-child(2) {
-            color: #ddd;
-        }
-    }
-
-    a {
-        color: var(--branco);
-        transition: var(--transicao);
-
-        &:hover {
-            color: var(--vermelho);
-        }
-    }
-
-    h2 + ul {
-        margin-top: 0.5rem;
-    }
-
-    iframe {
-        width: 100%;
-        height: 16rem;
-        border: 0;
-        border-radius: 0.5rem;
-    }
-}
-
 
 /* CONTATO */
 #contato {
@@ -295,94 +254,6 @@ nav {
     }
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-    .contato-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .rodape-conteudo {
-        flex-direction: column;
-    }
-}
-
-
-/* ORÇAMENTO E FORMULÁRIO */
-#orcamento {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-
-    > h2 {
-        grid-column: 1 / -1;
-        text-align: center;
-    }
-
-    form {
-        display: grid;
-        gap: 1rem;
-
-        > div {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        label {
-            font-weight: 600;
-        }
-
-        label + input,
-        textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #555;
-            border-radius: 0.4rem;
-            background: #222;
-            color: var(--branco);
-            font: inherit;
-            transition: var(--transicao);
-        }
-
-        input[type="email"] {
-            border-left: 3px solid var(--vermelho);
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--vermelho);
-            box-shadow: 0 0 0 3px #c0000033;
-        }
-
-        input:disabled,
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        input[type="checkbox"]:checked {
-            accent-color: var(--vermelho);
-        }
-
-        button {
-            padding: 0.9rem;
-            border: none;
-            border-radius: 0.4rem;
-            background: linear-gradient(90deg, var(--vermelho-escuro), var(--vermelho));
-            color: var(--branco);
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transicao);
-
-            &:not(:disabled):hover {
-                transform: translateY(-3px);
-                box-shadow: 0 5px 15px #c0000055;
-            }
-        }
-    }
-}
-
 /* MARCAS PARCEIRAS */
 #marcas {
     padding: 2rem;
@@ -439,7 +310,7 @@ nav {
     }
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO DAS MARCAS */
 @keyframes passar-marcas {
     from {
         transform: translateX(0);
@@ -447,59 +318,6 @@ nav {
 
     to {
         transform: translateX(-50%);
-    }
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-    nav {
-        gap: 1rem;
-    }
-
-    #inicio {
-        min-height: 75vh;
-        justify-content: center;
-
-        div {
-            width: 100%;
-        }
-    }
-
-    #sobre,
-    #contato,
-    #orcamento {
-        grid-template-columns: 1fr;
-    }
-
-    #sobre img {
-        width: 48%;
-    }
-}
-
-@media (max-width: 600px) {
-    section {
-        padding: 1.5rem 5%;
-    }
-
-    nav {
-        gap: 0.8rem;
-
-        a {
-            font-size: 0.8rem;
-        }
-    }
-
-    #inicio {
-        padding: 1.5rem;
-    }
-
-    .marca {
-        min-width: 7.5rem;
-
-        img {
-            width: 7.5rem;
-            height: 7.5rem;
-        }
     }
 }
 
@@ -642,7 +460,33 @@ nav {
     transform: translateY(-2px);
 }
 
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
+    nav {
+        gap: 1rem;
+    }
+
+    #inicio {
+        min-height: 75vh;
+        justify-content: center;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    #sobre img {
+        width: 48%;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+    }
+
     .orcamento-container {
         grid-template-columns: 1fr;
     }
@@ -653,5 +497,32 @@ nav {
 
     .campos-formulario .campo-completo {
         grid-column: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 1.5rem 5%;
+    }
+
+    nav {
+        gap: 0.8rem;
+
+        a {
+            font-size: 0.8rem;
+        }
+    }
+
+    #inicio {
+        padding: 1.5rem;
+    }
+
+    .marca {
+        min-width: 7.5rem;
+
+        img {
+            width: 7.5rem;
+            height: 7.5rem;
+        }
     }
 }
