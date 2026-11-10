@@ -1,171 +1,657 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
 
- body {
-     font-family: Arial, sans-serif;
-     background: #111;
-     color: white;
-     line-height: 1.5;
- }
+/* FONTE PERSONALIZADA */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
- section {
-     padding: 35px 45px;
- }
+/* VARIÁVEIS */
+:root {
+    --vermelho: #c00000;
+    --vermelho-escuro: #850000;
+    --fundo: #111;
+    --fundo-card: #1a1a1a;
+    --branco: #fff;
+    --cinza: #ccc;
+    --espacamento: 2rem;
+    --transicao: 0.3s ease;
+}
 
- h2 {
-     color: red;
-     margin-bottom: 15px;
- }
+/* CONFIGURAÇÃO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- p {
-     margin-bottom: 10px;
- }
+html {
+    scroll-behavior: smooth;
+}
 
- header {
-     position: absolute;
-     top: 0;
-     width: 100%;
- }
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--fundo);
+    color: var(--branco);
+    line-height: 1.6;
+}
 
- nav {
-     display: flex;
-     justify-content: center;
-     gap: 40px;
-     padding: 20px;
- }
+section {
+    padding: var(--espacamento) 4%;
+}
 
- nav a {
-     color: white;
-     text-decoration: none;
-     font-size: 20px;
- }
+h2 {
+    color: var(--vermelho);
+    margin-bottom: 1rem;
+}
 
- nav a:hover,
- #contato a:hover {
-     color: red;
- }
+p {
+    margin-bottom: 0.7rem;
+}
 
- #inicio {
-     min-height: 520px;
-     display: flex;
-     justify-content: flex-end;
-     align-items: center;
-     padding: 40px;
-     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-         url("imagens/fachada.jpg") center/cover;
- }
+/* MENU */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
 
- #inicio div {
-     width: 55%;
-     text-align: center;
- }
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: 1.25rem;
 
- #inicio h1 {
-     font-size: 34px;
-     margin-bottom: 15px;
- }
+    a {
+        color: var(--branco);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: var(--transicao);
 
- #inicio p {
-     font-size: 19px;
- }
+        &:hover {
+            color: var(--vermelho);
+            transform: translateY(-2px);
+        }
 
- #sobre {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 35px;
-     align-items: center;
- }
+        &:focus-visible {
+            outline: 2px solid var(--vermelho);
+            outline-offset: 5px;
+        }
+    }
+}
 
- #sobre img {
-     width: 48%;
-     height: 160px;
-     object-fit: cover;
- }
+/* INÍCIO */
+#inicio {
+    min-height: 85vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2.5rem;
 
- #contato {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 35px;
-     background: #1a1a1a;
- }
+    background:
+        linear-gradient(90deg, transparent, rgba(0,0,0,0.75)),
+        url("imagens/fachada.jpg") center/cover;
 
- #contato ul {
-     list-style: none;
- }
+    div {
+        width: 55%;
+        text-align: center;
+    }
 
- #contato li {
-     margin-bottom: 10px;
- }
+    h1 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
 
- #contato a {
-     color: white;
- }
+    p {
+        font-size: 1.1rem;
+        color: var(--cinza);
+    }
+}
 
- #contato iframe {
-     width: 100%;
-     height: 260px;
-     border: 0;
- }
+/* SOBRE NÓS */
+#sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
 
- #marcas {
-     padding: 30px;
-     background: #0c0c0c;
-     overflow: hidden;
- }
+    img {
+        width: 48%;
+        height: 10rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 12px #0008;
+        transition: var(--transicao);
 
- #marcas h2 {
-     text-align: center;
-     color: #b90000;
-     margin-bottom: 25px;
- }
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
 
- .carrossel-marcas {
-     display: flex;
-     width: max-content;
-     gap: 20px;
-     animation: passar-marcas 25s linear infinite;
- }
+    img:nth-child(2) {
+        border: 2px solid var(--vermelho);
+    }
+}
 
- .marca {
-     min-width: 150px;
-     text-align: center;
- }
+/* CONTATO */
+#contato {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    background: var(--fundo-card);
 
- .marca img {
-     width: 150px;
-     height: 150px;
-     object-fit: contain;
-     background: white;
-     border-radius: 50%;
-     padding: 10px;
- }
+    ul {
+        list-style: none;
+    }
 
- .marca p {
-     margin-top: 10px;
-     font-weight: bold;
-     color: white;
- }
+    li {
+        margin-bottom: 0.7rem;
 
- @keyframes passar-marcas {
-     from {
-         transform: translateX(0);
-     }
+        &:nth-child(2) {
+            color: #ddd;
+        }
+    }
 
-     to {
-         transform: translateX(-50%);
-     }
- }
+    a {
+        color: var(--branco);
+        transition: var(--transicao);
 
- @media (max-width: 600px) {
-     .marca {
-         min-width: 120px;
-     }
+        &:hover {
+            color: var(--vermelho);
+        }
+    }
 
-     .marca img {
-         width: 120px;
-         height: 120px;
-     }
- }
+    h2 + ul {
+        margin-top: 0.5rem;
+    }
+
+    iframe {
+        width: 100%;
+        height: 16rem;
+        border: 0;
+        border-radius: 0.5rem;
+    }
+}
+
+
+/* CONTATO */
+#contato {
+    display: block;
+    background: var(--fundo-card);
+}
+
+#contato > h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.contato-card {
+    background: #222;
+    padding: 1.5rem;
+    border-radius: 0.7rem;
+    border: 1px solid #333;
+    transition: var(--transicao);
+
+    h3 {
+        color: var(--branco);
+        margin-bottom: 1rem;
+        border-left: 3px solid var(--vermelho);
+        padding-left: 0.7rem;
+    }
+
+    &:hover {
+        border-color: var(--vermelho);
+        transform: translateY(-3px);
+    }
+
+    a {
+        display: block;
+        color: var(--cinza);
+        margin-top: 0.5rem;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--vermelho);
+        }
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 0.8rem;
+    }
+
+    iframe {
+        width: 100%;
+        height: 12rem;
+        border: 0;
+        border-radius: 0.5rem;
+    }
+}
+
+/* RODAPÉ */
+.rodape {
+    background: linear-gradient(135deg, #080808, #1c1c1c);
+    border-top: 3px solid var(--vermelho);
+    padding: 2.5rem 5% 1rem;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+
+    h2 {
+        color: var(--branco);
+        font-size: 1.5rem;
+
+        span {
+            color: var(--vermelho);
+        }
+    }
+
+    h3 {
+        color: var(--vermelho);
+        margin-bottom: 0.8rem;
+    }
+
+    p {
+        color: var(--cinza);
+    }
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+        color: var(--cinza);
+        text-decoration: none;
+        transition: var(--transicao);
+
+        &:hover {
+            color: var(--vermelho);
+        }
+    }
+}
+
+.rodape-final {
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    text-align: center;
+
+    p {
+        color: #888;
+        font-size: 0.8rem;
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+    }
+}
+
+
+/* ORÇAMENTO E FORMULÁRIO */
+#orcamento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    > h2 {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    form {
+        display: grid;
+        gap: 1rem;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        label + input,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #555;
+            border-radius: 0.4rem;
+            background: #222;
+            color: var(--branco);
+            font: inherit;
+            transition: var(--transicao);
+        }
+
+        input[type="email"] {
+            border-left: 3px solid var(--vermelho);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--vermelho);
+            box-shadow: 0 0 0 3px #c0000033;
+        }
+
+        input:disabled,
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        input[type="checkbox"]:checked {
+            accent-color: var(--vermelho);
+        }
+
+        button {
+            padding: 0.9rem;
+            border: none;
+            border-radius: 0.4rem;
+            background: linear-gradient(90deg, var(--vermelho-escuro), var(--vermelho));
+            color: var(--branco);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transicao);
+
+            &:not(:disabled):hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px #c0000055;
+            }
+        }
+    }
+}
+
+/* MARCAS PARCEIRAS */
+#marcas {
+    padding: 2rem;
+    background: #0c0c0c;
+    overflow: hidden;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 3px;
+            margin: 0.5rem auto;
+            background: var(--vermelho);
+        }
+    }
+}
+
+.carrossel-marcas {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    animation: passar-marcas 25s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.marca {
+    min-width: 9.4rem;
+    text-align: center;
+
+    img {
+        width: 9.4rem;
+        height: 9.4rem;
+        object-fit: contain;
+        background: var(--branco);
+        border-radius: 50%;
+        padding: 0.6rem;
+        transition: var(--transicao);
+
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+
+    p {
+        margin-top: 0.6rem;
+        font-weight: 700;
+    }
+}
+
+/* ANIMAÇÃO */
+@keyframes passar-marcas {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    nav {
+        gap: 1rem;
+    }
+
+    #inicio {
+        min-height: 75vh;
+        justify-content: center;
+
+        div {
+            width: 100%;
+        }
+    }
+
+    #sobre,
+    #contato,
+    #orcamento {
+        grid-template-columns: 1fr;
+    }
+
+    #sobre img {
+        width: 48%;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 1.5rem 5%;
+    }
+
+    nav {
+        gap: 0.8rem;
+
+        a {
+            font-size: 0.8rem;
+        }
+    }
+
+    #inicio {
+        padding: 1.5rem;
+    }
+
+    .marca {
+        min-width: 7.5rem;
+
+        img {
+            width: 7.5rem;
+            height: 7.5rem;
+        }
+    }
+}
+
+/* ORÇAMENTO */
+#orcamento {
+    display: block;
+    background: #151515;
+}
+
+#orcamento > h2,
+.orcamento-intro {
+    text-align: center;
+}
+
+.orcamento-intro {
+    color: var(--cinza);
+    margin-bottom: 2rem;
+}
+
+.orcamento-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.orcamento-info,
+.orcamento-formulario {
+    background: #222;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #383838;
+}
+
+.orcamento-container h3 {
+    color: var(--branco);
+    margin-bottom: 1rem;
+}
+
+.orcamento-info > p,
+.orcamento-formulario > p {
+    color: var(--cinza);
+    margin-bottom: 1.5rem;
+}
+
+.etapa {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    align-items: flex-start;
+}
+
+.etapa span {
+    color: var(--vermelho);
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.etapa h4 {
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.etapa p {
+    color: var(--cinza);
+    font-size: 0.9rem;
+}
+
+.campos-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.campos-formulario > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.campos-formulario .campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campos-formulario label {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.campos-formulario input,
+.campos-formulario textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: #151515;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    font: inherit;
+}
+
+.campos-formulario input:focus,
+.campos-formulario textarea:focus {
+    outline: none;
+    border-color: var(--vermelho);
+}
+
+.campos-formulario textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.confirmacao {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--cinza);
+    margin: 1.2rem 0;
+    font-size: 0.85rem;
+}
+
+.confirmacao input {
+    accent-color: var(--vermelho);
+}
+
+.orcamento-formulario button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--vermelho);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.orcamento-formulario button:hover {
+    background: #a90000;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .orcamento-container {
+        grid-template-columns: 1fr;
+    }
+
+    .campos-formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .campos-formulario .campo-completo {
+        grid-column: auto;
+    }
+}
