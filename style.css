@@ -254,72 +254,6 @@ nav {
     }
 }
 
-/* MARCAS PARCEIRAS */
-#marcas {
-    padding: 2rem;
-    background: #0c0c0c;
-    overflow: hidden;
-
-    h2 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-
-        &::after {
-            content: "";
-            display: block;
-            width: 4rem;
-            height: 3px;
-            margin: 0.5rem auto;
-            background: var(--vermelho);
-        }
-    }
-}
-
-.carrossel-marcas {
-    display: flex;
-    width: max-content;
-    gap: 1.25rem;
-    animation: passar-marcas 25s linear infinite;
-
-    &:hover {
-        animation-play-state: paused;
-    }
-}
-
-.marca {
-    min-width: 9.4rem;
-    text-align: center;
-
-    img {
-        width: 9.4rem;
-        height: 9.4rem;
-        object-fit: contain;
-        background: var(--branco);
-        border-radius: 50%;
-        padding: 0.6rem;
-        transition: var(--transicao);
-
-        &:hover {
-            transform: scale(1.08);
-        }
-    }
-
-    p {
-        margin-top: 0.6rem;
-        font-weight: 700;
-    }
-}
-
-/* ANIMAÇÃO DAS MARCAS */
-@keyframes passar-marcas {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
 
 /* ORÇAMENTO */
 #orcamento {
@@ -525,4 +459,48 @@ nav {
             height: 7.5rem;
         }
     }
+}
+
+.meuSwiper {
+    max-width: 850px;
+    margin: auto;
+    padding: 15px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 115px;
+    height: 115px;
+
+    border-radius: 50%;
+    background: white;
+
+    object-fit: contain;
+    padding: 15px;
+
+    transition: 0.3s;
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.1);
+}
+
+#marcas {
+    width: 100%;
+    padding: 40px 8%;
+    text-align: center;
+    background: #111;
+}
+
+#marcas h2 {
+    width: 100%;
+    text-align: center;
+    color: #e60000;
+    margin: 0 auto 30px auto;
+    display: block;
 }
