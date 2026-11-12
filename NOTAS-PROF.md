@@ -1,12 +1,13 @@
 # HTML
 
+### PONTOS POSITIVOS
+
 - Uso links para telefone e emails, ótimo.
 - Legal te usado o textarea no caso adequado.
 - Estrutura da página está boa.
 - Navegação dos menus já definida, ótimo.
 
-
-## SUGESTÕES DE MELHORIAS
+### SUGESTÕES DE MELHORIAS
 
 - Cuidado com arquivos duplicados.
 
@@ -37,3 +38,30 @@
 - Pode enriquecer um pouco os detalhes na página, incluir ícones nas opções de contato, incluir imagens de fundo para alguma seção, transformar algumas seções com muito texto/descrição em cards com imagem, etc. Você pode procurar alguns exemplos em sites na internet pra ter algumas ideias.
 
 - Bora completar essa páginas. 
+
+
+
+# CSS
+
+### PONTOS POSITIVOS
+
+- Parabéns pelo uso de CSS nesting, foi o único projeto que incluiu isso.
+- Boa definição de variáveis gerais.
+- Utilizou fonte externa.
+- Utilizou funcionalidades de grid e flexbox.
+- Incluiu estilos para evitar deformação das imagens.
+- Utilizou animações
+- Usou pseudo elementos
+- Usou responsividade
+
+### SUGESTÕES DE MELHORIAS
+
+- A animação das marcas opde ser refinada, poderia ajustar o CSS para evitar o espaço em branco que fica na direita em telas grandes. Ou pode virar um carrossel usando uma biblioteca, e usar animação em outra coisa. 
+
+- Pode melhorar a responsividade, por exemplo na seção `Sobre nós` onde as imagens poderiam ficar abaixo do texto no mobile. A imagem principal no início também talvez sesteja ocupando muito espaço verticalmente ao abrir em uma tela de celular.
+
+- Em alguns locais você poderia aproveitar as variáveis ao invés de colocar valores fixos, por exemplo alguns lugares que tem cores fixas ao invés das variáveis. É bom seguir um padrão sempre.
+
+- Header deveria ser absolute ou sticky?
+
+- Nas media query você usou alguns breakpoints bem parecidos (600px e 768px), tenta definir um único breakpoint ou se quiser múltiplos coloca um padrão (por exemplo mobile, tablet e desktop).
